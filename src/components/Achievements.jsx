@@ -1,48 +1,45 @@
 import React, { useEffect, useRef } from 'react'
 
-const achievements = [
+const awards = [
     {
-        title: '🏆 1st Place — Startup Competition Winner',
-        description: 'Awarded for the "Automated Power Monitoring System". Selected as the top innovative startup concept at the Intra-Institutional level.',
-        icon: '✨'
+        title: '🏆 1st Place Winner',
+        org: 'Intra-Institutional Startup Competition',
+        desc: 'Awarded for "Automated Power Monitoring System" (Oct 2024).',
+        icon: '🥇',
+        color: 'var(--bg-gold)',
+        rot: '-2deg'
     },
     {
-        title: '🚀 Top 6 Finalist — HackGenX (April 2025)',
-        description: 'National-level Hackathon. Recognized for creating an advanced AI solution among top participants across India.',
-        icon: '💻'
-    }
-]
-
-const certifications = [
-    { 
-        title: 'Feb 2026 Daily Challenge',  
-        issuer: 'LeetCode Badge',  
-        date: 'Feb 2026',  
-        desc: 'Completed February daily coding challenge streak without breaks.' 
+        title: '🚀 Top 6 Finalist',
+        org: 'HackGenX National Hackathon',
+        desc: 'Recognized as a leading national-level innovator (April 2025).',
+        icon: '🔝',
+        color: '#fff',
+        rot: '1deg'
     },
-    { 
-        title: '50+ Problems Solved',  
-        issuer: 'LeetCode',  
-        date: '2026',  
-        desc: 'Consistent problem solving across data structures and algorithms.' 
+    {
+        title: '⚔️ LeetCode Milestone',
+        org: 'DSA & Streak Warrior',
+        desc: 'Feb & March 2026 Daily Streak & 50+ Problems Solved in Python.',
+        icon: '🐍',
+        color: '#fff',
+        rot: '-1deg'
     },
-    { 
-        title: 'SQL Database Expert', 
-        issuer: 'HackerRank Certified', 
-        date: 'July 2024', 
-        desc: 'Advanced SQL queries, optimization, and DB management.' 
+    {
+        title: '💎 HackerRank Expert',
+        org: 'SQL & C Programming',
+        desc: 'Certified SQL Professional and 5-Star C Language achievement.',
+        icon: '🏅',
+        color: '#fff',
+        rot: '2deg'
     },
-    { 
-        title: 'C Programming (5-Star)', 
-        issuer: 'HackerRank', 
-        date: '2024', 
-        desc: 'Mastery of C data structures, pointers, and memory.' 
-    },
-    { 
-        title: 'AI & Machine Learning',  
-        issuer: 'Teach Nook',  
-        date: 'Feb 2024',  
-        desc: 'Neural networks, supervised & deep learning.' 
+    {
+        title: '🤖 AI Specialization',
+        org: 'Certified by Teach Nook',
+        desc: 'Advanced Artificial Intelligence & ML Certification (Feb 2024).',
+        icon: '🧠',
+        color: '#fff',
+        rot: '-2deg'
     }
 ]
 
@@ -60,39 +57,76 @@ function Achievements() {
     }, [])
 
     return (
-        <section className="section" id="achievements" ref={ref}>
+        <section className="section" id="achievements" ref={ref} style={{ padding: '150px 0', position: 'relative', overflow: 'hidden' }}>
             <div className="container">
-                <div className="reveal">
-                    <span className="section-label">// Recognition</span>
-                    <h2 className="section-title">Awards & Certs</h2>
+                <div className="reveal winner-header" style={{ textAlign: 'center', marginBottom: '80px' }}>
+                    <span className="section-label" style={{ color: 'var(--bg-gold)', fontWeight: 'bold', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '4px' }}>// Recognition</span>
+                    <h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 5.5rem)', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '-2px', lineHeight: '0.9' }}>
+                        I'M A <span className="gold-text">WINNER!</span>
+                    </h2>
                 </div>
 
-                <div className="achievements-grid">
-                    <div className="reveal">
-                        <h3 className="ach-group-title">🏆 Major wins</h3>
-                        {achievements.map((ach, i) => (
-                            <div key={i} className="ach-card">
-                                <h4>{ach.title}</h4>
-                                <p>{ach.description}</p>
+                <div className="awards-grid" style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+                    gap: '40px' 
+                }}>
+                    {awards.map((award, i) => (
+                        <div key={i} 
+                             className="reveal sticker-card pop-card" 
+                             style={{ 
+                                 '--rot': award.rot,
+                                 transitionDelay: `${i * 0.15}s`,
+                                 padding: '40px',
+                                 background: 'rgba(255,255,255,0.02)',
+                                 border: '3px solid rgba(255,255,255,0.1)',
+                                 color: '#fff'
+                             }}>
+                            <div style={{ 
+                                fontSize: '4rem', 
+                                marginBottom: '24px', 
+                                filter: 'drop-shadow(4px 4px 0px rgba(0,0,0,0.1))' 
+                            }}>
+                                {award.icon}
                             </div>
-                        ))}
-                    </div>
-
-                    <div className="reveal" style={{ transitionDelay: '0.15s' }}>
-                        <h3 className="ach-group-title">📜 Certifications</h3>
-                        {certifications.map((cert, i) => (
-                            <div key={i} className="cert-card">
-                                <h4>{cert.title}</h4>
-                                <p>{cert.desc}</p>
-                                <div className="cert-meta">
-                                    <span className="cert-badge">{cert.issuer}</span>
-                                    <span className="cert-date-text">{cert.date}</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                            <h3 style={{ 
+                                fontWeight: '900', 
+                                fontSize: '1.4rem', 
+                                textTransform: 'uppercase',
+                                color: award.color,
+                                marginBottom: '12px'
+                            }}>
+                                {award.title}
+                            </h3>
+                            <p style={{ 
+                                fontSize: '0.95rem', 
+                                fontWeight: '900',
+                                color: 'var(--bg-gold)',
+                                marginBottom: '12px'
+                            }}>
+                                {award.org}
+                            </p>
+                            <p style={{ 
+                                fontSize: '1rem', 
+                                color: 'rgba(255,255,255,0.6)', 
+                                lineHeight: '1.5',
+                                fontWeight: '600'
+                            }}>
+                                {award.desc}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
+            
+            {/* Professional Radial Glow Background Overlay */}
+            <div style={{ 
+                position: 'absolute', 
+                inset: 0, 
+                zIndex: -1, 
+                opacity: 0.2, 
+                background: 'radial-gradient(circle at 50% 50%, var(--bg-indigo) 0%, transparent 70%)' 
+            }} />
         </section>
     )
 }

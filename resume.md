@@ -58,7 +58,7 @@ AI/ML enthusiast with hands-on experience in building and deploying machine lear
 ## ACHIEVEMENTS & AWARDS
 *   **🏆 1st Place Winner**: Intra-Institutional Startup Competition (Oct 2024).
 *   **🚀 Top 6 Finalist**: HackGenX National-level Hackathon (April 2025).
-*   **LeetCode Badge**: Feb 2026 Daily Challenge Streak (Feb 2026).
+*   **LeetCode Badge**: Feb & March 2026 Daily Challenge Streak (2026).
 *   **LeetCode Milestone**: 50+ DSA Problems Solved in Python (2026).
 *   **SQL Database Expert**: HackerRank Certified Professional (July 2024).
 *   **C Programming (5-Star)**: Top rating on HackerRank (2024).

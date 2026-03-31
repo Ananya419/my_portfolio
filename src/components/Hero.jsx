@@ -8,14 +8,6 @@ const roles = [
     'Problem Solver',
 ]
 
-const skillBubbles = [
-    { label: '🧠 TensorFlow',       cls: 'sb-1 sb-indigo' },
-    { label: '🎯 PyTorch',           cls: 'sb-2 sb-teal' },
-    { label: '👁️ OpenCV',           cls: 'sb-3 sb-amber' },
-    { label: '🐍 Python',            cls: 'sb-4 sb-sky' },
-    { label: '⚗️ Deep Learning',    cls: 'sb-5 sb-violet' },
-]
-
 function Hero() {
     const [roleIdx, setRoleIdx] = useState(0)
     const [charIdx, setCharIdx] = useState(0)
@@ -39,102 +31,83 @@ function Hero() {
     }, [charIdx, deleting, roleIdx])
 
     return (
-        <section className="hero" id="hero">
-            <div className="hero-split">
+        <section className="hero" id="hero" style={{ perspective: '1000px', overflow: 'hidden' }}>
+            <div className="container hero-split">
 
                 {/* ======= TEXT SIDE ======= */}
                 <div className="hero-text">
                     <div className="hero-badge">
                         <div className="hero-badge-dot" />
-                        Available for Opportunities
+                        Status: System Idle
                     </div>
 
-                    <h1 className="hero-name">
+                    <h1 className="hero-name" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: '900', lineHeight: '0.8', marginBottom: '20px' }}>
                         Hi, I'm<br />
-                        <span className="gradient-text">Ananya</span>
+                        <span className="gold-text">Ananya</span>
                     </h1>
 
-                    <div className="hero-role">
+                    <div className="hero-role glass-card" style={{ padding: '12px 24px', display: 'inline-block', marginBottom: '24px', color: '#fff', border: '1px solid rgba(255,215,0,0.3)' }}>
                         {displayed}<span className="typing-cursor" />
                     </div>
 
-                    <p className="hero-desc">
-                        B.Tech CSE student specializing in AI & Machine Learning at Kalinga University.
-                        Now in my 3rd year, building advanced intelligent systems — 
-                        from neurological analysis to automated trading bots.
+                    <p className="hero-desc" style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.6)', marginBottom: '40px', maxWidth: '520px', lineHeight: '1.6' }}>
+                        A 3rd year student from Raipur inventing 
+                        <strong style={{ color: 'var(--bg-gold)' }}> AI & ML Gadgets</strong>. 
+                        Turning future tech into today's reality.
                     </p>
 
-                    <div className="hero-buttons">
-                        <a href="#projects" className="btn-primary"
-                           onClick={e => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) }}>
-                            <span>🚀</span> View My Work
-                        </a>
-                        <a href="/resume.html" target="_blank" className="btn-outline">
-                            <span>📄</span> View ATS Resume
-                        </a>
-                    </div>
-
-                    <div className="hero-socials">
-                        <a href="https://github.com/Ananya419" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ananya-shahi-1a1390305/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <a href="mailto:shahiananya381@gmail.com" aria-label="Email">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <rect x="2" y="4" width="20" height="16" rx="2" />
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                            </svg>
+                    <div className="hero-buttons" style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'flex-start' }}>
+                        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                            <a href="#projects" className="btn-primary">
+                                <span>⚡</span> My Inventions
+                            </a>
+                            <a href="./resume.html" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                                <span>📄</span> Resume
+                            </a>
+                        </div>
+                        <a href="#contact" className="btn-outline">
+                            <span>🚀</span> Say Hello
                         </a>
                     </div>
                 </div>
 
-                {/* ======= VISUAL SIDE ======= */}
-                <div className="hero-visual">
-                    {/* Decorative rings (they spin slowly, no icons) */}
-                    <div className="hero-ring-outer" />
-                    <div className="hero-ring-inner" />
-
-                    {/* Floating skill bubbles — all positioned at the EDGES, far from center */}
-                    <div className="skill-bubbles">
-                        {skillBubbles.map((b, i) => (
-                            <div key={i} className={`skill-bubble ${b.cls}`}>
-                                {b.label}
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Clean photo — not obstructed by anything */}
-                    <div className="hero-photo-frame">
-                        <div className="photo-glow" />
-                        <div className="photo-card">
-                            <div className="photo-card-inner">
-                                <img src="/profile.jpg" alt="Ananya Shahi" />
-                            </div>
-                            {/* Corner brackets decoration */}
-                            <div className="photo-corner tl" />
-                            <div className="photo-corner tr" />
-                            <div className="photo-corner bl" />
-                            <div className="photo-corner br" />
+                {/* ======= VISUAL SIDE (User Photo + 2X BIG Hero Mascot) ======= */}
+                <div className="hero-visual" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-start', position: 'relative' }}>
+                    <div className="profile-card-wrapper" style={{ position: 'relative', zIndex: 2, marginLeft: '-50px' }}>
+                        {/* WIDER PROFILE CARD */}
+                        <div className="pop-card profile-card" style={{ 
+                            width: '400px', 
+                            height: '580px', 
+                            background: 'rgba(255,255,255,0.02)', 
+                            border: '1px solid rgba(255,255,255,0.1)',
+                            borderRadius: '32px',
+                            overflow: 'hidden',
+                            position: 'relative',
+                            transform: 'rotate(2deg)',
+                            backdropFilter: 'blur(12px)',
+                            boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+                            transition: '0.4s cubic-bezier(0.23, 1, 0.32, 1)'
+                        }}>
+                            <img 
+                                src="./profile.jpg" 
+                                alt="Ananya Shahi" 
+                                style={{ 
+                                    width: '100%', 
+                                    height: '100%', 
+                                    objectFit: 'cover', 
+                                    objectPosition: 'top center'
+                                }} 
+                            />
                         </div>
-                        <div className="photo-status">
-                            <div className="hero-badge-dot" />
-                            Open to Work
-                        </div>
+
+                        {/* BIG HERO MASCOT HAS BEEN REMOVED to allow the Global "Popping" Mascot to take over the screen */}
+
                     </div>
                 </div>
             </div>
-
-            {/* Scroll indicator */}
-            <div className="scroll-indicator">
-                <div className="mouse" />
-                <span>Scroll</span>
-            </div>
+            
+            {/* Background Glow */}
+            <div style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '40%', height: '40%', background: 'radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%)', zIndex: -1 }} />
         </section>
     )
 }

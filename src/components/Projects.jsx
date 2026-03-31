@@ -2,52 +2,44 @@ import React, { useEffect, useRef } from 'react'
 
 const projects = [
     {
-        title: '🏆 Automated Power Monitor',
-        date: 'Sept — Nov 2024',
-        description: 'STARTUP WINNER. CV-based human presence detection for smart energy. Reduced power consumption by 15%.',
+        title: 'Automated Power Monitor',
+        description: 'STARTUP WINNER. CV-based human presence detection for smart energy.',
         tech: ['OpenCV', 'Python', 'IoT'],
         icon: '⚡',
-        link: 'https://github.com/Ananya419/Automated-Power-Monitoring-System'
+        link: 'https://github.com/Ananya419/Automated-Power-Monitoring-System',
+        color: 'var(--amber)'
     },
     {
         title: 'Neuroinsight AI',
-        date: 'Feb — March 2026',
-        description: 'Deep learning model for complex neurological pattern analysis from EEG data using TensorFlow.',
-        tech: ['Deep Learning', 'Python', 'EEG'],
+        description: 'Deep learning model for neurological pattern analysis from EEG data.',
+        tech: ['Deep Learning', 'PyTorch'],
         icon: '🧠',
-        link: 'https://github.com/Ananya419/Neuroinsight_AI'
+        link: 'https://github.com/Ananya419/Neuroinsight_AI',
+        color: 'var(--sky)'
     },
     {
         title: 'SymptomIQ',
-        date: 'Jan — Feb 2025',
-        description: 'Health prediction system using ML and REST APIs deployed with Flask and Gemini API.',
-        tech: ['ML', 'Flask', 'REST APIs'],
+        description: 'Health prediction system using ML and Flask/Gemini APIs.',
+        tech: ['ML', 'Flask', 'Gemini'],
         icon: '🏥',
-        link: 'https://github.com/Ananya419/SymptomIQ'
-    },
-    {
-        title: 'Library/Student Management',
-        date: 'Aug — Dec 2024',
-        description: 'Comprehensive system with Tkinter UI + MySQL backend for book tracking and data engineering.',
-        tech: ['Python', 'Tkinter', 'MySQL'],
-        icon: '📚',
-        link: 'https://github.com/Ananya419/Student-Management-System'
+        link: 'https://github.com/Ananya419/SymptomIQ',
+        color: 'var(--teal)'
     },
     {
         title: 'DeepFake Detector',
-        date: 'Jan — Feb 2025',
-        description: 'Deep learning classification using TensorFlow, achieving high accuracy in detecting manipulated images.',
-        tech: ['TensorFlow', 'Deep Learning', 'CV'],
+        description: 'TensorFlow classification for detecting manipulated images.',
+        tech: ['TensorFlow', 'CV'],
         icon: '🎭',
-        link: 'https://github.com/Ananya419/DeepFakeDetection'
+        link: 'https://github.com/Ananya419/DeepFakeDetection',
+        color: 'var(--violet)'
     },
     {
         title: 'Trading Bot',
-        date: 'Dec 2024 — Jan 2025',
-        description: 'Automated trading system using Python and REST APIs for real-time technical indicator analysis.',
-        tech: ['Python', 'APIs', 'Automation'],
+        description: 'Automated trading system using real-time technical indicators.',
+        tech: ['Python', 'APIs'],
         icon: '📈',
-        link: 'https://github.com/Ananya419/Trading_Bot'
+        link: 'https://github.com/Ananya419/Trading_Bot',
+        color: 'var(--indigo)'
     }
 ]
 
@@ -65,31 +57,76 @@ function Projects() {
     }, [])
 
     return (
-        <section className="section" id="projects" ref={ref}>
+        <section className="section" id="projects" ref={ref} style={{ padding: '120px 0', background: 'var(--bg-deep)' }}>
             <div className="container">
                 <div className="reveal">
-                    <span className="section-label">// Featured Work</span>
-                    <h2 className="section-title">Latest Projects</h2>
+                    <span className="section-label" style={{ color: 'var(--indigo-b)', fontWeight: 'bold', fontSize: '0.9rem', display: 'block', marginBottom: '12px' }}>// Built with Passion</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', fontWeight: '900', marginBottom: '60px' }}>Selected Panels</h2>
                 </div>
 
-                <div className="projects-grid">
-                    {projects.map((project, i) => (
-                        <div key={i} className="project-card reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-                            <div className="project-banner">
-                                <div className="project-banner-icon">{project.icon}</div>
-                                <div className="photo-glow" style={{ opacity: 0.4 }} />
+                <div className="projects-grid" style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+                    gap: '40px' 
+                }}>
+                    {projects.map((p, i) => (
+                        <div key={i} className="pop-card reveal project-panel" style={{ 
+                            padding: '0', 
+                            overflow: 'hidden',
+                            background: 'var(--bg-mid)',
+                            transitionDelay: `${i * 0.1}s`,
+                            display: 'flex',
+                            flexDirection: 'column'
+                        }}>
+                            <div style={{ 
+                                height: '220px', 
+                                background: p.color, 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                justifyContent: 'center', 
+                                fontSize: '5rem',
+                                borderBottom: '4px solid #000'
+                            }}>
+                                <span style={{ filter: 'drop-shadow(4px 4px 0px #000)' }}>{p.icon}</span>
                             </div>
-                            <div className="project-body">
-                                <h3 className="project-title">{project.title}</h3>
-                                <div className="project-date">{project.date}</div>
-                                <p className="project-desc">{project.description}</p>
-                                <div className="project-tech">
-                                    {project.tech.map((t, j) => (
-                                        <span key={j} className="tech-tag">{t}</span>
+                            <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                <h3 style={{ 
+                                    fontFamily: 'var(--font-head)', 
+                                    fontSize: '1.6rem', 
+                                    fontWeight: '900',
+                                    marginBottom: '12px'
+                                }}>{p.title}</h3>
+                                <p style={{ 
+                                    fontSize: '1rem', 
+                                    color: 'var(--text-secondary)',
+                                    marginBottom: '24px',
+                                    lineHeight: '1.6',
+                                    flex: 1
+                                }}>{p.description}</p>
+                                <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '32px' }}>
+                                    {p.tech.map((t, j) => (
+                                        <span key={j} style={{ 
+                                            background: '#000', 
+                                            color: '#fff', 
+                                            padding: '6px 12px', 
+                                            fontSize: '0.8rem', 
+                                            fontWeight: 'bold',
+                                            borderRadius: '6px'
+                                        }}>{t}</span>
                                     ))}
                                 </div>
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                                    View on GitHub →
+                                <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ 
+                                    fontWeight: '900', 
+                                    color: p.color,
+                                    textTransform: 'uppercase',
+                                    fontSize: '1rem',
+                                    letterSpacing: '1px',
+                                    display: 'inline-block',
+                                    borderBottom: `2px solid ${p.color}`,
+                                    paddingBottom: '4px',
+                                    alignSelf: 'start'
+                                }}>
+                                    Live Preview →
                                 </a>
                             </div>
                         </div>
