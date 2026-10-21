@@ -3,23 +3,23 @@ import React, { useEffect, useRef } from 'react'
 const projects = [
     {
         title: 'Automated Power Monitor',
-        description: 'STARTUP WINNER. CV-based human presence detection for smart energy.',
-        tech: ['OpenCV', 'Python', 'IoT'],
+        description: 'STARTUP WINNER. CV-based human presence detection for smart energy. Team of 4; I owned UI/UX design and documentation.',
+        tech: ['OpenCV', 'YOLOv3', 'PyQt5', 'Arduino'],
         icon: '⚡',
-        link: 'https://github.com/Ananya419/Automated-Power-Monitoring-System',
+        link: 'https://github.com/shri-ram07/Backend-Battalion',
         color: 'var(--amber)'
     },
     {
         title: 'Neuroinsight AI',
-        description: 'Deep learning model for neurological pattern analysis from EEG data.',
-        tech: ['Deep Learning', 'PyTorch'],
+        description: '3D U-Net that segments brain tumours in MRI scans. Team project; I owned preprocessing, training and evaluation.',
+        tech: ['PyTorch', '3D U-Net', 'FastAPI'],
         icon: '🧠',
         link: 'https://github.com/Ananya419/Neuroinsight_AI',
         color: 'var(--sky)'
     },
     {
         title: 'SymptomIQ',
-        description: 'Health prediction system using ML and Flask/Gemini APIs.',
+        description: 'Health prediction system using ML and Flask/Gemini APIs. Built with a teammate; I owned data collection, research and data analysis.',
         tech: ['ML', 'Flask', 'Gemini'],
         icon: '🏥',
         link: 'https://github.com/Ananya419/SymptomIQ',
@@ -27,7 +27,7 @@ const projects = [
     },
     {
         title: 'DeepFake Detector',
-        description: 'TensorFlow classification for detecting manipulated images.',
+        description: 'TensorFlow classification for detecting manipulated images. Built with a teammate.',
         tech: ['TensorFlow', 'CV'],
         icon: '🎭',
         link: 'https://github.com/Ananya419/DeepFakeDetection',
@@ -35,7 +35,7 @@ const projects = [
     },
     {
         title: 'Trading Bot',
-        description: 'Automated trading system using real-time technical indicators.',
+        description: 'CLI for placing market, limit and stop-limit orders on the Binance Futures testnet.',
         tech: ['Python', 'APIs'],
         icon: '📈',
         link: 'https://github.com/Ananya419/Trading_Bot',

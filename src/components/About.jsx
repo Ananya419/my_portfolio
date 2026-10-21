@@ -38,7 +38,7 @@ function About() {
                     <div className="about-stats reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
                         {[
                             { num: '5+',  label: 'Gadgets Built' },
-                            { num: '8.8', label: 'Invention CGPA' },
+                            { num: '9.01', label: 'Invention CGPA' },
                             { num: '4',   label: 'Blueprints' },
                         ].map((s, i) => (
                             <div key={i} className="stat-card pop-card" style={{ padding: '24px', textAlign: 'center', background: 'var(--bg-mid)' }}>

@@ -10,7 +10,7 @@ const awards = [
         rot: '-2deg'
     },
     {
-        title: '🚀 Top 6 Finalist',
+        title: '🚀 Top 5 Finalist',
         org: 'HackGenX National Hackathon',
         desc: 'Recognized as a leading national-level innovator (April 2025).',
         icon: '🔝',
