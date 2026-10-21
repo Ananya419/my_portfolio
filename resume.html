@@ -1,292 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ananya Shahi | Resume</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --text-main: #111827;
-            --text-muted: #4b5563;
-            --border: #e5e7eb;
-            --bg: #ffffff;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ananya Shahi | Resume</title>
+<style>
+  @page { size: Letter; margin: 0.35in 0.55in 0.3in 0.55in; }
+  :root { --navy: #1f3864; --link: #0563c1; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: #000; font-family: "Times New Roman", Times, serif; font-size: 10.4pt; line-height: 1.16; }
+  a { color: var(--link); }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .name { font-size: 17pt; font-weight: bold; color: var(--navy); letter-spacing: 0.2px; }
+  .headline { font-weight: bold; font-size: 11pt; }
+  .contact { text-align: right; font-size: 10pt; line-height: 1.25; }
+  h2 { margin: 6px 0 3px; padding-bottom: 1px; border-bottom: 1.3px solid var(--navy); color: var(--navy); font-size: 11pt; text-transform: uppercase; }
+  p { margin: 0; text-align: justify; }
+  .skills p { margin-bottom: 1px; }
+  .item { margin-top: 3px; }
+  .item .title { font-weight: bold; }
+  .date { font-weight: bold; white-space: nowrap; }
+  .sep { color: #555; margin: 0 3px; }
+  .tags { font-weight: normal; }
+  ul { margin: 1px 0 0; padding-left: 18px; }
+  li { text-align: justify; margin-bottom: 1px; }
+  li::marker { font-size: 9pt; }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #f3f4f6;
-            color: var(--text-main);
-            line-height: 1.5;
-            padding: 40px 20px;
-        }
-
-        .resume-page {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg);
-            padding: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-radius: 4px;
-        }
-
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 0.88rem;
-            color: var(--text-muted);
-        }
-
-        .contact-info a {
-            color: var(--text-muted);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
-        .contact-info a:hover { border-color: var(--primary); color: var(--primary); }
-
-        section { margin-bottom: 30px; }
-        h2 {
-            font-size: 1.15rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-main);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 6px;
-            margin-bottom: 16px;
-        }
-
-        .section-content { padding-left: 2px; }
-
-        .item { margin-bottom: 20px; }
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
-
-        .item-title { font-weight: 700; color: var(--text-main); font-size: 1.05rem; }
-        .item-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
-        .item-meta { font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 6px; }
-
-        .project-link {
-            font-size: 0.8rem;
-            color: var(--primary);
-            text-decoration: none;
-            margin-left: 10px;
-            font-weight: normal;
-        }
-        .project-link:hover { text-decoration: underline; }
-
-        ul { list-style-position: outside; margin-left: 18px; }
-        li { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 4px; }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 30px;
-        }
-        .skill-group { color: var(--text-muted); font-size: 0.92rem; }
-        .skill-group strong { color: var(--text-main); }
-
-        @media print {
-            body { background: white; padding: 0; }
-            .resume-page { box-shadow: none; padding: 0; }
-            .project-link { display: inline; color: black !important; }
-            a { text-decoration: none !important; color: black !important; }
-        }
-        /* Print Styles */
-        @media print {
-            body { background: white; margin: 0; padding: 0; }
-            .resume-page { 
-                box-shadow: none; 
-                margin: 0; 
-                width: 100%; 
-                max-width: none; 
-                padding: 0 40px; 
-            }
-            .no-print { display: none !important; }
-            a { text-decoration: none; color: black; }
-            section { page-break-inside: avoid; }
-        }
-    </style>
+  @media screen {
+    body { max-width: 8.5in; margin: 0 auto; padding: 28px 16px 40px; }
+    .download { text-align: right; margin-bottom: 14px; }
+    .download a { display: inline-block; padding: 8px 18px; border-radius: 99px; background: var(--navy); color: #fff; font-family: Arial, sans-serif; font-size: 10pt; text-decoration: none; }
+  }
+  @media screen and (max-width: 640px) {
+    .row { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .contact { text-align: left; }
+  }
+  @media print { .download { display: none; } }
+</style>
 </head>
 <body>
-    <div class="resume-page">
-        <div class="no-print" style="text-align: right; margin-bottom: 20px;">
-            <button onclick="window.print()" style="
-                background: var(--primary);
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 6px;
-                cursor: pointer;
-                font-family: inherit;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin-left: auto;
-                transition: opacity 0.2s;
-            " onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                Save as PDF / Print
-            </button>
-        </div>
+<div class="download"><a href="./Ananya_CV.pdf" download>Download PDF</a></div>
 
-        <header>
-            <h1>Ananya Shahi</h1>
-            <p class="subtitle">AI/ML Intern | Python Developer</p>
-            <div class="contact-info">
-                <span>Raipur, Chhattisgarh</span>
-                <span>•</span>
-                <span>+91 9580487496</span>
-                <span>•</span>
-                <a href="mailto:shahiananya381@gmail.com">shahiananya381@gmail.com</a>
-                <span>•</span>
-                <a href="https://www.linkedin.com/in/ananya-shahi-1a1390305/" target="_blank">linkedin.com/in/ananya-shahi-1a1390305/</a>
-                <span>•</span>
-                <a href="https://github.com/Ananya419" target="_blank">github.com/Ananya419</a>
-            </div>
-        </header>
+<div class="row">
+  <div>
+    <div class="name">ANANYA SHAHI</div>
+    <div class="headline">Data Analyst | Machine Learning and Applied AI</div>
+  </div>
+  <div class="contact">
+    +91 95804 87496 | shahiananya381@gmail.com<br>
+    <a href="https://www.linkedin.com/in/ananya-shahi-1a1390305/">linkedin.com/in/ananya-shahi-1a1390305/</a><br>
+    <a href="https://github.com/Ananya419">https://github.com/Ananya419</a>
+  </div>
+</div>
 
-        <section id="summary">
-            <h2>Professional Summary</h2>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">
-                AI/ML enthusiast with hands-on experience in building and deploying machine learning models using Python, TensorFlow, and PyTorch. Skilled in **Data Analysis (EDA)**, **Feature Engineering**, **Computer Vision**, and **REST API Development** with a focus on solving real-world problems.
-            </p>
-        </section>
+<h2>Professional Summary</h2>
+<p>B.Tech Computer Science (AI &amp; ML) student with a 9.01/10 CGPA and hands-on experience in data analytics, machine learning, and generative AI. Completed a Data Analyst internship at Bluestock Fintech analyzing financial and mutual fund datasets with Python, SQL, and Pandas, and built deep learning applications in team projects spanning 3D medical image segmentation, computer vision, and generative AI. Google Gemini Student Ambassador driving AI literacy and responsible adoption of generative AI among students.</p>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Kalinga University</span>
-                    <span class="item-date">2023 – 2027</span>
-                </div>
-                <div class="item-meta">B.Tech in Computer Science (AI & ML)</div>
-                <p style="font-size: 0.92rem; color: var(--text-muted);">Current CGPA: <strong>8.8 / 10.0 (3rd Year)</strong></p>
-            </div>
-        </section>
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><b>Programming and Databases:</b> Python, SQL, JavaScript, Java, C, PostgreSQL, MySQL, Jupyter Notebook, Git, GitHub, <span style="white-space: nowrap">VS Code</span></p>
+  <p><b>Data Analytics:</b> Pandas, NumPy, Matplotlib, Seaborn, exploratory data analysis (EDA), data cleaning and preprocessing, financial ratio analysis, dashboards and reporting</p>
+  <p><b>Machine Learning and Deep Learning:</b> Scikit-Learn, TensorFlow, Keras, PyTorch, supervised and unsupervised learning, CNNs, 3D U-Net, model training and evaluation</p>
+  <p><b>Computer Vision and NLP:</b> OpenCV, YOLO, object detection, image processing, NLTK, text preprocessing, tokenization, <span style="white-space: nowrap">TF-IDF</span>, sentiment analysis</p>
+  <p><b>Generative AI and Web:</b> Google Gemini API, prompt engineering, AI agents, React, Node.js, Express, Flask, REST APIs</p>
+</div>
 
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-group"><strong>Languages:</strong> Python (Advanced), SQL (Expert), C, TypeScript</div>
-                <div class="skill-group"><strong>AI/ML:</strong> TensorFlow, PyTorch, Deep Learning, **EDA**, **Feature Engineering**, **Model Optimization**</div>
-                <div class="skill-group"><strong>Computer Vision:</strong> OpenCV, Image Processing, Gesture Recognition</div>
-                <div class="skill-group"><strong>Tools/DB:</strong> Flask, Git, GitHub, MySQL, **REST APIs**, **MLOps (Basic)**, NumPy, Pandas</div>
-            </div>
-        </section>
+<h2>Professional Experience</h2>
+<div class="item">
+  <div class="row"><span class="title">Data Analyst Intern, Bluestock Fintech</span><span class="date">May 2026 - Jul 2026</span></div>
+  <ul>
+    <li>Analyzed financial and mutual fund datasets using Python, SQL, and Pandas, performing data cleaning, exploratory data analysis, and fund performance analysis to surface actionable investment insights.</li>
+    <li>Built components of a Financial Ratio Engine and a Screener and Peer Comparison module to compute and benchmark key financial ratios across funds and companies.</li>
+    <li>Contributed to dashboard and valuation workflows, translating analysis into Matplotlib and Seaborn visualizations and stakeholder-ready reports and presentations.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><span><span class="title">Google Gemini Student Ambassador, Google</span><span class="sep">/</span><i>Kalinga University, Raipur</i></span><span class="date">2026 - Present</span></div>
+  <ul>
+    <li>Promote AI literacy and responsible generative AI adoption among students, demonstrating practical Gemini use cases for productivity, learning, and development.</li>
+    <li>Support student-focused AI initiatives and campus events, mentoring peers in exploring Gemini and AI-powered workflows.</li>
+  </ul>
+</div>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">🏆 Automated Power Monitor (Startup Winner) <a href="https://github.com/Ananya419/Automated-Power-Monitoring-System" target="_blank" class="project-link">[https://github.com/Ananya419/Automated-Power-Monitoring-System]</a></span>
-                    <span class="item-date">Sept 2024 – Nov 2024</span>
-                </div>
-                <ul>
-                    <li><strong>1st Place Winner</strong> at Intra-Institutional Startup Competition for smart energy management.</li>
-                    <li>Engineered a CV system for human presence detection, reducing energy consumption by 15%.</li>
-                </ul>
-            </div>
+<h2>Projects</h2>
+<div class="item">
+  <div class="row"><span><span class="title">NeuroInsight AI: 3D Brain Tumor Segmentation</span><span class="sep">|</span><span class="tags">PyTorch, 3D U-Net, FastAPI</span><span class="sep">/</span><a href="https://github.com/Ananya419/Neuroinsight_AI">LINK</a></span><span class="date">Aug - Nov 2025</span></div>
+  <ul>
+    <li>Team project: owned the preprocessing, training, and evaluation pipeline for a PyTorch 3D U-Net that segments brain tumors in multi-modal volumetric MRI scans, served through a FastAPI backend with Grad-CAM explainability.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><span><span class="title">SymptomIQ: AI Health Prediction Assistant</span><span class="sep">|</span><span class="tags">TensorFlow, Flask, Google Gemini API</span><span class="sep">/</span><a href="https://github.com/Ananya419/SymptomIQ">LINK</a></span><span class="date">Feb 2025</span></div>
+  <ul>
+    <li>In a 2-member team, owned data collection, research, and data analysis (15 public medical datasets) for a Flask app that predicts health conditions from symptoms using TensorFlow and Gemini.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><span><span class="title">DeepFake Detector: Image Authenticity Classifier</span><span class="sep">|</span><span class="tags">TensorFlow, Flask</span><span class="sep">/</span><a href="https://github.com/Ananya419/DeepFakeDetection">LINK</a></span><span class="date">Jan - Feb 2025</span></div>
+  <ul>
+    <li>In a 2-member team, co-developed a TensorFlow CNN image classifier served through a Flask interface that labels uploaded images as FAKE or REAL to help flag manipulated media.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><span><span class="title">Automated Power Monitoring System</span><span class="sep">|</span><span class="tags">YOLOv3, OpenCV, PyQt5, Arduino</span><span class="sep">/</span><a href="https://github.com/shri-ram07/Backend-Battalion">LINK</a></span><span class="date">Sep - Nov 2024</span></div>
+  <ul>
+    <li>In a 4-member team, owned UI/UX design and documentation for a real-time system that detects people with YOLOv3 and switches appliances via Arduino to cut energy waste; won the Intra-Institutional Start-up Competition.</li>
+  </ul>
+</div>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Neuroinsight AI <a href="https://github.com/Ananya419/Neuroinsight_AI" target="_blank" class="project-link">[https://github.com/Ananya419/Neuroinsight_AI]</a></span>
-                    <span class="item-date">Feb 2026 – March 2026</span>
-                </div>
-                <ul>
-                    <li>Developed a deep learning model to analyze complex neurological patterns using EEG data.</li>
-                    <li>Integrated predictive insights for real-time neurological health monitoring using **Model Optimization** techniques.</li>
-                </ul>
-            </div>
+<h2>Education</h2>
+<ul>
+  <li><div class="row"><span><b>B.Tech, Computer Science (AI and ML)</b><span class="sep">|</span>Kalinga University, Raipur<span class="sep">|</span>CGPA: 9.01/10</span><span class="date">2023 - 2027</span></div></li>
+  <li><div class="row"><span><b>Higher Secondary (Class XII), Science</b><span class="sep">|</span>Radhika Senior Secondary School, Gorakhpur (CBSE)</span><span class="date">2023</span></div></li>
+  <li><div class="row"><span><b>Secondary (Class X)</b><span class="sep">|</span>Oxford Public School, Gorakhpur (CBSE)</span><span class="date">2021</span></div></li>
+</ul>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">SymptomIQ <a href="https://github.com/Ananya419/SymptomIQ" target="_blank" class="project-link">[https://github.com/Ananya419/SymptomIQ]</a></span>
-                    <span class="item-date">Jan 2025 – Feb 2025</span>
-                </div>
-                <ul>
-                    <li>Engineered a Flask-based health prediction system using TensorFlow and **REST APIs**.</li>
-                </ul>
-            </div>
+<h2>Achievements and Certifications</h2>
+<ul>
+  <li>Ranked in the Top 400 of 23,000+ participants in the PromptWars Virtual Challenge 1 (Google for Developers x Hack2Skill, 2026); Top 5 Finalist at the HackGenX Hackathon (2025); Winner of the Intra-Institutional Start-up Competition (2024).</li>
+  <li>Certifications: 5-Day AI Agents Intensive (Google and Kaggle, 2026); Programming in Python and SQL (HackerRank, 2024); Artificial Intelligence and Machine Learning (Teach Nook, 2024).</li>
+  <li>Awarded Best Anchor at school and college events for confident stage presence, event hosting, and communication skills.</li>
+</ul>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Library/Student Management <a href="https://github.com/Ananya419/Student-Management-System" target="_blank" class="project-link">[https://github.com/Ananya419/Student-Management-System]</a></span>
-                    <span class="item-date">Aug 2024 – Dec 2024</span>
-                </div>
-                <ul>
-                    <li>Comprehensive system with Tkinter UI + MySQL backend for book tracking and **Data Engineering** logs.</li>
-                </ul>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">DeepFake Detector <a href="https://github.com/Ananya419/DeepFakeDetection" target="_blank" class="project-link">[https://github.com/Ananya419/DeepFakeDetection]</a></span>
-                    <span class="item-date">Jan 2025 – Feb 2025</span>
-                </div>
-                <ul>
-                    <li>Developed a deep learning-based image classification model using TensorFlow, achieving high accuracy in detecting manipulated images through optimized training and evaluation techniques.</li>
-                </ul>
-            </div>
-
-            <div class="item" style="margin-bottom: 0;">
-                <div class="item-header">
-                    <span class="item-title">Trading Bot <a href="https://github.com/Ananya419/Trading_Bot" target="_blank" class="project-link">[https://github.com/Ananya419/Trading_Bot]</a></span>
-                    <span class="item-date">Dec 2024 – Jan 2025</span>
-                </div>
-                <ul>
-                    <li>Architected an automated trading system using Python and **REST APIs** for real-time technical indicator analysis and order execution.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="achievements">
-            <h2>Achievements & Awards</h2>
-            <ul>
-                <li><strong>🏆 1st Place Winner:</strong> Intra-Institutional Startup Competition for the "Automated Power Monitoring System" (Oct 2024).</li>
-                <li><strong>🚀 Top 6 Finalist:</strong> HackGenX National-level Hackathon (April 2025).</li>
-                <li><strong>LeetCode Badge:</strong> Feb & March 2026 Daily Challenge Streak (2026).</li>
-                <li><strong>LeetCode Milestone:</strong> 50+ DSA Problems Solved in Python (2026).</li>
-                <li><strong>HackerRank SQL Expert:</strong> Certified SQL Database Professional (July 2024).</li>
-                <li><strong>5-Star HackerRank:</strong> Top achievement in C Programming Language (2024).</li>
-                <li><strong>AI Specialization:</strong> Certified AI & Machine Learning by Teach Nook (Feb 2024).</li>
-            </ul>
-        </section>
-    </div>
-
-    <!-- Print instructions button for users -->
-    <button onclick="window.print()" style="position: fixed; bottom: 30px; right: 30px; background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 99px; cursor: pointer; font-family: inherit; font-size: 0.9rem; font-weight: 700; box-shadow: 0 4px 15px rgba(37,99,235,0.4); display: none;">Print Resume</button>
 </body>
 </html>
